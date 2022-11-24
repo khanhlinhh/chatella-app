@@ -56,3 +56,7 @@ export async function getProfile() {
 //   const { data } = await axios.get("account");
 //   return guard(object({ account: accountDecoder }))(data).account;
 // }
+export interface GenericResponse {
+  status: string;
+  message: string;
+}
