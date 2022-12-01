@@ -4,24 +4,25 @@ import React from "react";
 import PubNub from "pubnub";
 import { PubNubProvider } from "pubnub-react";
 import { Chat, MessageList, MessageInput, MemberList } from "@pubnub/react-chat-components";
+import "./Chat.css"
 
 /* Creates and configures your PubNub instance. Be sure to replace "myPublishKey" and "mySubscribeKey"
   with your own keyset. If you wish, modify the default "myFirstUser" userId value for the chat user. */
 const pubnub = new PubNub({
-  publishKey: "myPublishKey",
-  subscribeKey: "mySubscribeKey",
-  userId: "myFirstUser",
+  publishKey: "pub-c-5bce77e4-78c0-4986-8383-607c7c8656a0",
+  subscribeKey: "sub-c-dcbd0791-6026-4921-a650-b8caed02cd36",
+  userId: "mysecondUser",
 });
 const currentChannel = "Default";
 const theme = "light";
 
-function App(): JSX.Element {
+function App() {
   return (
     <PubNubProvider client={pubnub}>
       {/* PubNubProvider is a part of the PubNub React SDK and allows you to access PubNub instance
         in components down the tree. */}
       <Chat {...{ currentChannel, theme }}>
-      <MemberList
+      <MemberList 
     presentMembers={[
       "user_3c4400761cba4b65b77b6cae55fc21eb",
       "user_def709b1adfc4e67b98bb7a820f581b1",
@@ -62,5 +63,4 @@ function App(): JSX.Element {
     </PubNubProvider>
   );
 }
-
 export default App;
