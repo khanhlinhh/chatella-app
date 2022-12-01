@@ -11,7 +11,7 @@ import "./Chat.css"
 const pubnub = new PubNub({
   publishKey: "pub-c-5bce77e4-78c0-4986-8383-607c7c8656a0",
   subscribeKey: "sub-c-dcbd0791-6026-4921-a650-b8caed02cd36",
-  userId: "mysecondUser",
+  userId: "ok1",
 });
 const currentChannel = "Default";
 const theme = "light";
@@ -57,7 +57,7 @@ function App() {
   />
         {/* Chat is an obligatory state provider. It allows you to configure some common component
           options, like the current channel and the general theme for the app. */}
-        <MessageList />
+        <MessageList fetchMessages={5}/>
         <MessageInput />
       </Chat>
     </PubNubProvider>
